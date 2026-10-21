@@ -1,0 +1,35 @@
+<svg width="156" height="27" viewBox="0 0 156 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <title>BookRent</title>
+  <!-- Icon: book with spine and page lines -->
+  <rect x="5.47" y="3.28" width="15.31" height="19.69" rx="2.19" stroke="#00D991" stroke-width="2.1875" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M10.9 3.28V22.97" stroke="#00D991" stroke-width="2.1875" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M15.6 10.2H17.1" stroke="#00D991" stroke-width="2.1875" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M15.6 15.2H17.1" stroke="#00D991" stroke-width="2.1875" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Wordmark: BookRent -->
+  <g stroke="#00D991" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none">
+    <!-- B -->
+    <path d="M31 6.5V19.5"/>
+    <path d="M31 6.5H36A3.25 3.25 0 0 1 36 13H31"/>
+    <path d="M31 13H37A3.25 3.25 0 0 1 37 19.5H31"/>
+    <!-- o -->
+    <circle cx="51.5" cy="15" r="4.5"/>
+    <!-- o -->
+    <circle cx="65" cy="15" r="4.5"/>
+    <!-- k -->
+    <path d="M75 6.5V19.5"/>
+    <path d="M82 10.5L75 15.5L82.5 19.5"/>
+    <!-- R -->
+    <path d="M93 6.5V19.5"/>
+    <path d="M93 6.5H98A3.25 3.25 0 0 1 98 13H93"/>
+    <path d="M98 13L103 19.5"/>
+    <!-- e -->
+    <path d="M110.5 15H119.5A4.5 4.5 0 1 0 118.2 18.2"/>
+    <!-- n -->
+    <path d="M127 19.5V10.5"/>
+    <path d="M127 15A4.5 4.5 0 0 1 136 15V19.5"/>
+    <!-- t -->
+    <path d="M145 7V16A3.5 3.5 0 0 0 148.5 19.5H150"/>
+    <path d="M141 10.5H150"/>
+  </g>
+</svg>
