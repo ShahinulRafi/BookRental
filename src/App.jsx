@@ -1,4 +1,5 @@
 import BookList from "./books/BookList";
+import Footer from "./Footer";
 import Header from "./Header";
 import Sidebar from "./Sidebar";
 
@@ -10,6 +11,7 @@ function App() {
         <Sidebar />
         <BookList />
       </div>
+      <Footer />
     </>
   );
 }
