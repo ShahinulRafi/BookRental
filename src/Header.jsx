@@ -3,13 +3,14 @@ import logo from "./assets/logo.svg";
 import moon from "./assets/moon.svg";
 import ring from "./assets/ring.svg";
 import shoppingCart from "./assets/shopping-cart.svg";
+import sun from "./assets/sun.svg";
 import CartDetails from "./books/CartDetails";
-import { BookContext } from "./context";
-
+import { BookContext, ThemeContext } from "./context";
 export default function Header() {
   const [showCart, setShowCart] = useState(false);
   const { cartData } = useContext(BookContext);
-  console.log("Cart Data from Header", cartData);
+  // console.log("Cart Data from Header", cartData);
+  const { darkMode, setDarkMode } = useContext(ThemeContext);
   function handleCartShow() {
     setShowCart(true);
   }
@@ -34,8 +35,9 @@ export default function Header() {
             <a
               className="bg-primary/20 dark:bg-primary/[7%] rounded-lg backdrop-blur-[2px] p-1 inline-block"
               href="#"
+              onClick={() => setDarkMode((darkMode) => !darkMode)}
             >
-              <img src={moon} width="24" height="24" alt="" />
+              <img src={darkMode ? sun : moon} width="24" height="24" alt="" />
             </a>
           </li>
           <li>
