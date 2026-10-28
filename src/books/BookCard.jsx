@@ -1,10 +1,14 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { BookContext } from "../context";
 import { getImgUrl } from "../utils/book-utility";
 import BookDetailsModal from "./BookDetailsModal";
 import Rating from "./Rating";
+
 export default function BookCard({ book }) {
   const [showModal, setShowModal] = useState(false);
   const [selectedBook, setSelectedBook] = useState(null);
+
+  const { cartData, setCartData } = useContext(BookContext);
   function handleModalClose() {
     setSelectedBook(null);
     setShowModal(false);
@@ -13,10 +17,27 @@ export default function BookCard({ book }) {
     setSelectedBook(book);
     setShowModal(true);
   }
+  function handleAddToCart(e, book) {
+    e.stopPropagation();
+
+    const found = cartData.find((item) => {
+      return item.id === book.id;
+    });
+
+    if (!found) {
+      setCartData([...cartData, book]);
+    } else {
+      console.log(`The book ${book} has been already added to cart`);
+    }
+  }
   return (
     <>
       {showModal && (
-        <BookDetailsModal book={selectedBook} onClose={handleModalClose} />
+        <BookDetailsModal
+          book={selectedBook}
+          onClose={handleModalClose}
+          onCartAdd={handleAddToCart}
+        />
       )}
       <figure className="p-4 border border-black/10 shadow-sm dark:border-white/10 rounded-xl">
         <a href="#" onClick={() => handleBookSelection(book)}>
@@ -34,6 +55,7 @@ export default function BookCard({ book }) {
             <a
               className="bg-primary rounded-lg py-2 px-5 flex items-center justify-center gap-2 text-[#171923] font-semibold text-sm"
               href="#"
+              onClick={(e) => handleAddToCart(e, book)}
             >
               <img src="./assets/tag.svg" alt="" />
               <span>${book.price} | Add to Cart</span>
